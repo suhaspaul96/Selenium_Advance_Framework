@@ -20,8 +20,6 @@ Cloud Grids - BrowserStack, LambdaTest
 SonarLint, Java > 22
 
 Run Local and on Selenoid Integration.
-
-IMG1 
+ 
 mvn test -Dsurefire.suiteXmlFiles=testng.xml
 
-IMG2
