@@ -13,7 +13,7 @@ import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
-import static java.sql.DriverManager.getDriver;
+import static com.suhaspoul.drivers.DriverManager.getDriver;
 
 public class WaitHelpers {
 
@@ -65,12 +65,13 @@ public class WaitHelpers {
         return new WebDriverWait(getDriver(), Duration.ofSeconds(20)).until(ExpectedConditions.presenceOfElementLocated(elementLocation));
     }
 
+
     public static WebElement presenceOfElement(WebDriver driver,By elementLocation) {
         return new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.presenceOfElementLocated(elementLocation));
     }
 
     public static WebElement visibilityOfElement(By elementLocation) {
-        return new WebDriverWait(getDriver(), Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOfElementLocated(elementLocation));
+        return new WebDriverWait((WebDriver) getDriver(), Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOfElementLocated(elementLocation));
     }
 
     public WebElement getElement(By key) {
